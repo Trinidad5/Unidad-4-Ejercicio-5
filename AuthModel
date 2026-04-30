@@ -1,0 +1,30 @@
+package models;
+
+
+public class AuthModel {
+
+    public boolean autenticar(String usuario, String contrasena) {
+        if (usuario.equals("Admin") && contrasena.equals("1234")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    
+    
+    
+    
+    
+    
+    public void registro(String nombre, String apellido, String email,
+                         String usuario, String contrasena) {
+        System.out.println(" NUEVO REGISTRO ");
+        System.out.println("Nombre   : " + nombre);
+        System.out.println("Apellido : " + apellido);
+        System.out.println("Email    : " + email);
+        System.out.println("Usuario  : " + usuario);
+        System.out.println("Contraseña: " + contrasena);
+
+    }
+}
