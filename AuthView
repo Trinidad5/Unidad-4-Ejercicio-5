@@ -1,0 +1,155 @@
+package views;
+
+import javax.swing.*;
+import java.awt.*;
+
+
+
+
+public class AuthView extends JFrame {
+
+	
+	
+	
+    public JTextField campUsuario;
+    public JPasswordField campContrasena;
+    
+    public JButton btnLogin;
+    public JButton btnRegistrarse;
+    
+    
+    
+    public JLabel lblMensaje;
+
+    
+    
+    public AuthView() {
+        setTitle("The Seoul Kitchen");
+        
+        
+        setSize(400, 370);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        setLocationRelativeTo(null);
+        setResizable(false);
+        
+        
+
+        JPanel panel = new JPanel();
+        panel.setBackground(new Color(237, 232, 223));
+        
+        
+        panel.setLayout(null);
+        add(panel);
+
+        JLabel titulo = new JLabel("THE SEOUL KITCHEN");
+        titulo.setBounds(80, 30, 250, 30);
+        
+        
+        titulo.setFont(new Font("Georgia", Font.BOLD, 18));
+        titulo.setForeground(new Color(160, 120, 64));
+        panel.add(titulo);
+
+        JLabel lblUsuario = new JLabel("USUARIO");
+        
+        
+        lblUsuario.setBounds(60, 90, 100, 20);
+        lblUsuario.setFont(new Font("Georgia", Font.PLAIN, 11));
+        
+        
+        lblUsuario.setForeground(new Color(122, 106, 85));
+        panel.add(lblUsuario);
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        campUsuario = new JTextField();
+        campUsuario.setBounds(60, 110, 280, 35);
+        campUsuario.setBackground(new Color(245, 242, 236));
+        campUsuario.setFont(new Font("Georgia", Font.PLAIN, 13));
+        campUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        panel.add(campUsuario);
+        
+        
+        
+        
+        
+
+        JLabel lblContrasena = new JLabel("CONTRASEÑA");
+        lblContrasena.setBounds(60, 160, 120, 20);
+        lblContrasena.setFont(new Font("Georgia", Font.PLAIN, 11));
+        lblContrasena.setForeground(new Color(122, 106, 85));
+        panel.add(lblContrasena);
+        
+
+        campContrasena = new JPasswordField();
+        campContrasena.setBounds(60, 180, 280, 35);
+        campContrasena.setBackground(new Color(245, 242, 236));
+        campContrasena.setFont(new Font("Georgia", Font.PLAIN, 13));
+        campContrasena.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        panel.add(campContrasena);
+        
+        
+        
+        
+        
+        
+        
+
+        btnLogin = new JButton("INICIAR SESION");
+        btnLogin.setBounds(60, 235, 280, 40);
+        btnLogin.setBackground(new Color(160, 120, 64));
+        btnLogin.setForeground(Color.WHITE);
+        btnLogin.setFont(new Font("Georgia", Font.BOLD, 13));
+        btnLogin.setBorderPainted(false);
+        btnLogin.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        panel.add(btnLogin);
+        
+        
+        
+        
+        
+        
+
+        lblMensaje = new JLabel("");
+        lblMensaje.setBounds(60, 282, 280, 25);
+        lblMensaje.setFont(new Font("Georgia", Font.PLAIN, 12));
+        lblMensaje.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.add(lblMensaje);
+        
+        
+        
+        
+        
+        
+
+        btnRegistrarse = new JButton("¿No tienes cuenta? Registrate");
+        btnRegistrarse.setBounds(60, 308, 280, 25);
+        btnRegistrarse.setBackground(new Color(237, 232, 223));
+        btnRegistrarse.setForeground(new Color(160, 120, 64));
+        btnRegistrarse.setFont(new Font("Georgia", Font.PLAIN, 11));
+        btnRegistrarse.setBorderPainted(false);
+        btnRegistrarse.setContentAreaFilled(false);
+        btnRegistrarse.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        panel.add(btnRegistrarse);
+        
+        
+        
+        
+    }
+
+    public void login() {
+        this.setVisible(true);
+    }
+
+  }
