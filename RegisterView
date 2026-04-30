@@ -1,0 +1,281 @@
+package views;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+
+
+
+
+
+
+public class RegisterView extends JFrame {
+
+	
+	
+	
+	
+	
+	
+	
+    public JTextField campNombre;
+    public JTextField campApellido;
+    
+    public JTextField campEmail;
+    public JTextField campUsuario;
+    public JPasswordField campContrasena;
+    public JPasswordField campConfirmar;
+    public JButton btnCrearCuenta;
+    public JLabel lblMensaje;
+
+    
+    
+    
+    
+    public RegisterView() {
+        setTitle("pantalla registro 2");
+        setSize(900, 680);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
+
+        
+        
+        
+        
+        
+        
+        JPanel fondo = new JPanel();
+        fondo.setBackground(new Color(237, 232, 223));
+        fondo.setLayout(null);
+        add(fondo);
+
+       
+        JPanel tarjeta = new JPanel();
+        tarjeta.setBackground(Color.WHITE);
+        
+        
+        tarjeta.setLayout(null);
+        tarjeta.setBounds(245, 80, 400, 450);
+        tarjeta.setBorder(BorderFactory.createLineBorder(new Color(220, 215, 205), 1));
+        fondo.add(tarjeta);
+
+        
+     
+        JLabel titulo = new JLabel("REGISTRO");
+        titulo.setBounds(0, 28, 400, 30);
+        titulo.setFont(new Font("Georgia", Font.BOLD, 20));
+        titulo.setForeground(new Color(160, 120, 64));
+        
+        titulo.setHorizontalAlignment(SwingConstants.CENTER);
+        tarjeta.add(titulo);
+
+      
+        
+        
+        
+        JLabel subtitulo = new JLabel("Crea tu cuenta de administrador");
+        subtitulo.setBounds(0, 60, 400, 18);
+        subtitulo.setFont(new Font("Georgia", Font.PLAIN, 11));
+        subtitulo.setForeground(new Color(150, 135, 115));
+        subtitulo.setHorizontalAlignment(SwingConstants.CENTER);
+        tarjeta.add(subtitulo);
+
+    
+        
+        
+        
+        JLabel lblNombre = new JLabel("NOMBRE");
+        lblNombre.setBounds(30, 92, 100, 15);
+        lblNombre.setFont(new Font("Georgia", Font.PLAIN, 10));
+        lblNombre.setForeground(new Color(122, 106, 85));
+        tarjeta.add(lblNombre);
+
+        
+        
+        
+        
+        campNombre = new JTextField();
+        campNombre.setBounds(30, 108, 155, 32);
+        campNombre.setBackground(new Color(245, 242, 236));
+        campNombre.setFont(new Font("Georgia", Font.PLAIN, 12));
+        campNombre.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        tarjeta.add(campNombre);
+        setPlaceholder(campNombre, "Tu nombre");
+
+        
+        
+        
+      
+        JLabel lblApellido = new JLabel("APELLIDO");
+        lblApellido.setBounds(210, 92, 100, 15);
+        lblApellido.setFont(new Font("Georgia", Font.PLAIN, 10));
+        lblApellido.setForeground(new Color(122, 106, 85));
+        tarjeta.add(lblApellido);
+
+        
+        
+        
+        campApellido = new JTextField();
+        campApellido.setBounds(210, 108, 155, 32);
+        campApellido.setBackground(new Color(245, 242, 236));
+        campApellido.setFont(new Font("Georgia", Font.PLAIN, 12));
+        campApellido.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        tarjeta.add(campApellido);
+        
+        
+        setPlaceholder(campApellido, "Tu apellido");
+
+   
+        
+        
+        
+        JLabel lblEmail = new JLabel("EMAIL");
+        lblEmail.setBounds(30, 152, 100, 15);
+        lblEmail.setFont(new Font("Georgia", Font.PLAIN, 10));
+        lblEmail.setForeground(new Color(122, 106, 85));
+        tarjeta.add(lblEmail);
+
+        
+        
+        campEmail = new JTextField();
+        campEmail.setBounds(30, 168, 335, 32);
+        campEmail.setBackground(new Color(245, 242, 236));
+        campEmail.setFont(new Font("Georgia", Font.PLAIN, 12));
+        campEmail.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        tarjeta.add(campEmail);
+        setPlaceholder(campEmail, "correo");
+
+    
+        
+        
+        JLabel lblUsuario = new JLabel("USUARIO");
+        lblUsuario.setBounds(30, 212, 100, 15);
+        lblUsuario.setFont(new Font("Georgia", Font.PLAIN, 10));
+        lblUsuario.setForeground(new Color(122, 106, 85));
+        tarjeta.add(lblUsuario);
+        
+        
+
+        campUsuario = new JTextField();
+        campUsuario.setBounds(30, 228, 335, 32);
+        campUsuario.setBackground(new Color(245, 242, 236));
+        campUsuario.setFont(new Font("Georgia", Font.PLAIN, 12));
+        campUsuario.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        tarjeta.add(campUsuario);
+        setPlaceholder(campUsuario, "Nombre de usuario");
+
+        
+        
+        
+        JLabel lblContrasena = new JLabel("CONTRASEÑA");
+        lblContrasena.setBounds(30, 272, 120, 15);
+        lblContrasena.setFont(new Font("Georgia", Font.PLAIN, 10));
+        lblContrasena.setForeground(new Color(122, 106, 85));
+        tarjeta.add(lblContrasena);
+
+        
+        
+        campContrasena = new JPasswordField();
+        campContrasena.setBounds(30, 288, 155, 32);
+        campContrasena.setBackground(new Color(245, 242, 236));
+        campContrasena.setFont(new Font("Georgia", Font.PLAIN, 12));
+        campContrasena.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        tarjeta.add(campContrasena);
+
+    
+        
+        
+        JLabel lblConfirmar = new JLabel("CONFIRMAR");
+        lblConfirmar.setBounds(210, 272, 120, 15);
+        lblConfirmar.setFont(new Font("Georgia", Font.PLAIN, 10));
+        lblConfirmar.setForeground(new Color(122, 106, 85));
+        tarjeta.add(lblConfirmar);
+
+        
+        
+        campConfirmar = new JPasswordField();
+        campConfirmar.setBounds(210, 288, 155, 32);
+        campConfirmar.setBackground(new Color(245, 242, 236));
+        campConfirmar.setFont(new Font("Georgia", Font.PLAIN, 12));
+        campConfirmar.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+        tarjeta.add(campConfirmar);
+
+ 
+        
+        
+        btnCrearCuenta = new JButton("CREAR CUENTA");
+        btnCrearCuenta.setBounds(30, 345, 335, 42);
+        btnCrearCuenta.setBackground(new Color(160, 120, 64));
+        btnCrearCuenta.setForeground(Color.WHITE);
+        btnCrearCuenta.setFont(new Font("Georgia", Font.BOLD, 13));
+        btnCrearCuenta.setBorderPainted(false);
+        btnCrearCuenta.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        tarjeta.add(btnCrearCuenta);
+
+   
+        
+        
+        lblMensaje = new JLabel("");
+        lblMensaje.setBounds(30, 395, 335, 25);
+        lblMensaje.setFont(new Font("Georgia", Font.PLAIN, 11));
+        lblMensaje.setHorizontalAlignment(SwingConstants.CENTER);
+        tarjeta.add(lblMensaje);
+    }
+
+    
+    
+    
+    
+    
+    private void setPlaceholder(JTextField field, String placeholder) {
+        field.setForeground(new Color(180, 165, 145));
+        field.setText(placeholder);
+        field.addFocusListener(new FocusAdapter() {
+            public void focusGained(FocusEvent e) {
+                if (field.getText().equals(placeholder)) {
+                    field.setText("");
+                    field.setForeground(new Color(80, 70, 60));
+                    
+                    
+                    
+                }
+                
+                
+                
+            }
+            public void focusLost(FocusEvent e) {
+            	
+            	
+                if (field.getText().isEmpty()) {
+                    field.setForeground(new Color(180, 165, 145));
+                    field.setText(placeholder);
+                }
+                
+                
+                
+                
+                
+                
+            }
+            
+            
+        });
+        
+        
+    }
+
+    public void mostrar() {
+        this.setVisible(true);
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+}
