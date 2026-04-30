@@ -1,0 +1,110 @@
+package controller;
+
+import models.AuthModel;
+import views.AuthView;
+import views.RegisterView;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class AuthController {
+
+    public AuthView vista;
+
+    public AuthController() {
+        vista = new AuthView();
+    }
+
+    public void login() {
+        vista.login();
+        
+        
+        
+        
+
+        vista.btnLogin.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String usuario = vista.campUsuario.getText();
+                String contrasena = new String(vista.campContrasena.getPassword());
+
+                
+                
+                
+                
+                AuthModel modelo = new AuthModel();              
+                boolean resultado = modelo.autenticar(usuario, contrasena);
+                
+                
+                
+
+                if (resultado) {
+                    vista.lblMensaje.setForeground(new Color(39, 174, 96));
+                    vista.lblMensaje.setText("Bienvenido " + usuario);
+                    
+                    
+                } else {
+                	
+                	
+                	
+                    vista.lblMensaje.setForeground(new Color(192, 57, 43));
+                    vista.lblMensaje.setText("Credenciales incorrectas");
+                    
+                    
+                }
+            }
+        });
+
+        
+        vista.btnRegistrarse.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                vista.setVisible(false);
+                abrirRegistro();
+                
+                
+            }
+        });
+    }
+
+    
+    
+    private void abrirRegistro() {
+        RegisterView vistaReg = new RegisterView();
+        vistaReg.mostrar();
+
+        
+        
+        
+        vistaReg.btnCrearCuenta.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String nombre     = vistaReg.campNombre.getText();
+                String apellido   = vistaReg.campApellido.getText();
+                String email      = vistaReg.campEmail.getText();
+                String usuario    = vistaReg.campUsuario.getText();
+                String contrasena = new String(vistaReg.campContrasena.getPassword());
+                String confirmar  = new String(vistaReg.campConfirmar.getPassword());
+                
+                
+                
+
+                if (nombre.isEmpty() || apellido.isEmpty() || email.isEmpty()
+                        || usuario.isEmpty() || contrasena.isEmpty()) {
+                    vistaReg.lblMensaje.setForeground(new Color(192, 57, 43));
+                    vistaReg.lblMensaje.setText("completa todos los campos");
+                    return;
+                }
+
+                if (!contrasena.equals(confirmar)) {
+                    vistaReg.lblMensaje.setForeground(new Color(192, 57, 43));
+                    vistaReg.lblMensaje.setText("Las contraseñas no coinciden");
+                    return;
+                }
+
+                AuthModel modelo = new AuthModel();
+                modelo.registro(nombre, apellido, email, usuario, contrasena);
+
+                vistaReg.lblMensaje.setForeground(new Color(39, 174, 96));
+                vistaReg.lblMensaje.setText("Cuenta creada");
+            }
+        });
+    }
+}
